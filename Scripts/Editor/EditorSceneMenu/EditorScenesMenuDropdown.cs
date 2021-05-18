@@ -64,7 +64,6 @@ namespace Game.Ed.ScenesMenu
 				var iWindowBackendType = typeof(Editor).Assembly.GetType("UnityEditor.IWindowBackend");
 				var guiView_windowBackend = guiViewType.GetProperty("windowBackend", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 				var windowBackend_viewVisualTree = iWindowBackendType.GetProperty("visualTree", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-				var imguiContainer_OnGui = typeof(IMGUIContainer).GetField("m_OnGUIHandler", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 				var windowBackend = guiView_windowBackend.GetValue(toolbar);
 				var visualTree = (VisualElement)windowBackend_viewVisualTree.GetValue(windowBackend, null);
 
